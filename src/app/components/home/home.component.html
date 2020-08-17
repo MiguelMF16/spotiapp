@@ -1,0 +1,8 @@
+<h1>Home</h1>
+
+<ol>
+    <li *ngFor="let pais of paises">
+        {{pais.name}} - {{pais.population / pais.area | number:'1.2-2'}}
+
+    </li>
+</ol>
