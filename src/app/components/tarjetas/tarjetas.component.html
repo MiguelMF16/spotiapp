@@ -1,0 +1,8 @@
+<div class="card-columns m-5">
+    <div (click)="verArtista( item )" *ngFor="let item of items" class="card puntero">
+        <img [src]="item.images | noimg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+            <span class="badge badge-primary" *ngFor="let artista of item.artists">{{ artista.name }}</span>
+            <p class="card-text"> </p>
+        </div>

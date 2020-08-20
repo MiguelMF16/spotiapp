@@ -11,7 +11,7 @@ import { AnotacionesmiguelComponent } from './components/anotacionesmiguel/anota
 
 export const ROUTES: Routes = [
     { path: 'home', component: HomeComponent },
-    { path: 'artist:/id', component: ArtistComponent },
+    { path: 'artist/:id', component: ArtistComponent },
     { path: 'search', component: SearchComponent },
     { path: 'anotacionesmiguel', component: AnotacionesmiguelComponent },
     { path: 'navbar', component: NavbarComponent },

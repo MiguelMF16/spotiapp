@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LolService } from '../../services/lol.service';
 
 @Component({
   selector: 'app-anotacionesmiguel',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnotacionesmiguelComponent implements OnInit {
 
-  
+  heroes: any[] = [];
+
+
   instrucciones: string[] = [
     'Primero importamos en app.module.ts la Clase HttpClientModule',
     'En aquella página que vayamos a usar nuestra importación, en su constructor llamaremos a HttpClient y lo importaremos en su .ts',
@@ -17,7 +20,12 @@ export class AnotacionesmiguelComponent implements OnInit {
     'Dentro usamos nombredeloquerecibimos para por ejemplo pasarlo por console.log o igualarlo a otra variable',
     ''
   ]
-  constructor() { }
+  constructor(private lolService: LolService) {
+    this.lolService.getSummonerByName().subscribe((data: any) =>{
+      this.heroes = data.freeChampionIds;
+      console.log(data);
+    });
+   }
 
   ngOnInit(): void {
   }

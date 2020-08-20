@@ -1,8 +1,8 @@
-<h1>Home</h1>
+<app-loading class="m-5" *ngIf="loading"></app-loading>
+<div *ngIf="error" class="alert alert-danger animated fadeIn">
+    <div>
+        <h3> {{mensajeError}} </h3>
+    </div>
+</div>
 
-<ol>
-    <li *ngFor="let pais of paises">
-        {{pais.name}} - {{pais.population / pais.area | number:'1.2-2'}}
-
-    </li>
-</ol>
+<app-tarjetas [items]="nuevasCanciones"></app-tarjetas>
